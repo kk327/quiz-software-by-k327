@@ -30,16 +30,16 @@
         const data = helpers.atob(route.params.data);
         adminMode = config.adminModeEnabled && data.adminMode == config.adminModeAccessName;
 
-        if ("questions" in data) {
+        if (data.questions) {
             name.value = data.name;
 
-            if ("category" in data) {
+            if (data.category) {
                 category.value = data.category;
                 saveId.value = data.idInCategory;
                 saveCategory.value = data.category;
             }
 
-            if ("author" in data) {
+            if (data.author) {
                 author.value = data.author;
             }
 
