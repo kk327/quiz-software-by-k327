@@ -151,43 +151,46 @@
 <template>
     <header class="flex flex-col max-w-[calc(100vw-32px)] items-center">
         <h1 class="text-xl m-2 font-bold">Quiz settings:</h1>
-        <label>
+        <label class="flex items-center justify-center w-full gap-1">
             Name:
             <input 
                 type="text"
                 v-model="name"
-                class="my-1 mx-1"
+                class="my-1 mx-1 min-w-16"
                 :tabindex="quitPopupVisible ? -1 : ''"
             >
         </label>
 
-        <label>
+        <label class="flex items-center justify-center w-full gap-1 text-nowrap">
             Author (optional):
             <input 
                 type="text"
                 v-model="author"
-                class="my-1 mx-1"
+                class="my-1 mx-1 min-w-16"
                 :tabindex="quitPopupVisible ? -1 : ''"
             >
         </label>
 
-        <label v-if="adminMode">
+        <label 
+            v-if="adminMode"
+            class="flex items-center justify-center w-full gap-1"
+        >
             Category:
             <input 
                 type="text"
                 v-model="category"
-                class="my-1 mx-1"
+                class="my-1 mx-1 min-w-16"
                 :tabindex="quitPopupVisible ? -1 : ''"
             >
         </label>
         
-        <label>
+        <label class="flex items-center justify-center w-full gap-1 text-nowrap">
             Time limit:
             <input 
                 type="number"
                 min="0"
                 v-model="timeLimit"
-                class="my-1 mx-1"
+                class="my-1 mx-1 min-w-16"
                 :disabled="timeType == 'nolimit'"
                 :tabindex="quitPopupVisible ? -1 : ''"
                 @change="validateTimeLimit"

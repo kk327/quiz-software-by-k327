@@ -88,7 +88,7 @@
 </script>
 
 <template>
-    <section class="w-[calc(100vw-32px)] max-w-[800px] bg-neutral-125 dark:bg-neutral-900 mt-8 rounded-2xl flex flex-col items-center">
+    <section class="w-[calc(100vw-32px)] max-w-[800px] bg-neutral-125 dark:bg-neutral-900 mt-8 first-of-type:mt-4 rounded-2xl flex flex-col items-center">
         <section class="m-4">
             <p>Question type:</p>
             <label class="m-2 cursor-pointer">

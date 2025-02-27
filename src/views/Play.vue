@@ -119,11 +119,13 @@
             JSON.stringify(questions[0].correct) == JSON.stringify(answers[0]) ? 
                 'Correct answer' 
                 : 'Incorrect answer' 
-            : `Correct answers: ${correctAnswers}/${answers.length} (${100 / (questions.length / correctAnswers)}%)` }}
+            : `Correct answers: ${correctAnswers}/${answers.length} (${Math.round(100 / (questions.length / correctAnswers))}%)` }}
     </p>
     <p 
         v-if="timeLeft"
-        :class="data.author ? 'mt-2' : ''"
+        :class="data.author ? 
+                    'sticky top-0 w-full bg-white dark:bg-neutral-950 p-2 mb-[-8px] bg-opacity-90 dark:bg-opacity-90' 
+                    : 'sticky top-0 w-full bg-white dark:bg-neutral-950 p-2 my-[-8px] bg-opacity-90 dark:bg-opacity-90'"
     >Time left: {{ timeLeft >= 60 ? Math.floor(timeLeft / 60) + "min " + timeLeft % 60 + "s" : timeLeft + "s" }}</p>
     
     <Question 
